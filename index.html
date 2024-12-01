@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -125,6 +125,10 @@
 
     function calculate() {
       try {
+        if (screen.value.trim() === '') {
+          screen.value = 'Error'; // Prevent empty eval()
+          return;
+        }
         screen.value = eval(screen.value);
       } catch (error) {
         screen.value = 'Error';
